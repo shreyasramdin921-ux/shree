@@ -1,0 +1,30 @@
+name: Basic Commands
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo-commands:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Print today's date
+        run: date
+
+      - name: Create text file
+        run: |
+          echo "This is a demo file" > demo.txt
+          cat demo.txt
+
+      - name: Run Python program
+        run: |
+          python3 -c "print('Hello from Python!')"
